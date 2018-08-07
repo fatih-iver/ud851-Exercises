@@ -41,6 +41,6 @@
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
         android:paddingTop="8dp"
-        android:text="A sample description. Should be deleted." />
+        android:text="Definition will show up here!" />
 
 </LinearLayout>
