@@ -16,12 +16,15 @@
 
 package com.example.android.todolist.data;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
+
+import java.net.URI;
 
 
 public class TaskContract {
 
-    /* TODO (1) Add content provider constants to the Contract
+    /*
      Clients need to know how to access the task data, and it's your job to provide
      these content URI's for the path to that data:
         1) Content authority,
@@ -30,9 +33,17 @@ public class TaskContract {
         4) Content URI for data in the TaskEntry class
       */
 
+    private final static String CONTENT_AUTHORITY = "com.example.android.todolist";
+
+    private final static Uri BASE_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+
+    private final static String PATH_FOR_TASKS = "tasks";
+
 
     /* TaskEntry is an inner class that defines the contents of the task table */
     public static final class TaskEntry implements BaseColumns {
+
+        public final static Uri CONTENT_URI = BASE_URI.buildUpon().appendPath(PATH_FOR_TASKS).build();
 
 
         // Task table and column names
